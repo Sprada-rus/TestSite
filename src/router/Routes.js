@@ -3,12 +3,13 @@ import NotFound from "../pages/NotFound";
 import WelcomePage from "../pages/WelcomePage";
 import Registration from "../pages/Registration";
 import Login from "../pages/Login";
+import Profile from "../pages/Profile";
 
 export const useRoutes = (isAuth = false) => {
     if (isAuth){
         return (
             <Routes>
-                <Route path="/profile" />
+                <Route path="/profile" element={ <Profile /> }/>
                 <Route path="/registration"  element={ <Navigate to={'/profile'} replace/> }/>
                 <Route path="/" element={<Navigate to={'/profile'}/>} />
                 <Route path="*" element={ <NotFound /> } />
