@@ -6,6 +6,6 @@ export default function RegistrationSuccess() {
 
     return (<div className="content">
         <h1>Регистрация прошла успешно!</h1>
-        <Button className="btn-primary" onClick={() => navigate('/login')}>Войти в личный кабинет</Button>
+        <Button className="btn-primary" onClick={() => navigate('/TestSite/login')}>Войти в личный кабинет</Button>
     </div>)
 }

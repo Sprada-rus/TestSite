@@ -18,7 +18,7 @@ export default function Login() {
             if (user.user_name === formData.get('login')){
                 if (user.user_password === formData.get('password')) {
                     dispatch(login(users.indexOf(user)));
-                    navigate('/profile');
+                    navigate('/TestSite/profile');
                 } else {
                     setIsOpenSnackbar(true);
                 }

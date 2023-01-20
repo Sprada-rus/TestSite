@@ -28,7 +28,7 @@ export default function Registration(){
             return;
         }
 
-        navigate('/registration/success')
+        navigate('/TestSite/registration/success')
     }
 
     return (

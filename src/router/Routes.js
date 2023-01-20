@@ -13,24 +13,26 @@ export const useRoutes = (isAuth = false) => {
     if (isAuth){
         return (
             <Routes>
-                <Route path="/profile" element={ <Profile /> }/>
-                <Route path="/registration"  element={ <Navigate to={'/profile'} replace/> }/>
-                <Route path="/" element={ <WelcomePage /> } />
-                <Route path="/login" element={ <Navigate to={'/profile'}/> } />
+                <Route path="/TestSite">
+                    <Route path="profile"  element={ <Profile /> }/>
+                    <Route path="registration"  element={ <Navigate to={'/TestSite/profile'} replace/> }/>
+                    <Route index element={ <WelcomePage /> } />
+                    <Route path="login" element={ <Navigate to={'/TestSite/profile'}/> } />
+                </Route>
                 <Route path="*" element={ <NotFound /> } />
             </Routes>
         )
     } else {
         return (
             <Routes>
-                <Route path="/">
+                <Route path="/TestSite">
                     <Route index element={ <WelcomePage /> } />
                     <Route path="registration" >
                         <Route index element={<Registration />}/>
                         <Route path={'success'} element={ <RegistrationSuccess />} />
                     </Route>
                     <Route path="login" element={ <Login /> } />
-                    <Route path="profile"  element={<Navigate to={'/login'} replace/>}/>
+                    <Route path="profile"  element={<Navigate to={'/TestSite/login'} replace/>}/>
                 </Route>
                 <Route path="*" element={ <NotFound /> } />
             </Routes>
@@ -45,22 +47,22 @@ export const useNavRoutes = (isAuth) => {
     const data = [
         {
             name: 'main',
-            link: '/',
+            link: '/TestSite',
             label: 'На главную'
         },
         {
             name: 'registration',
-            link: '/registration',
+            link: '/TestSite/registration',
             label: 'Регистрация'
         },
         {
             name: 'profile',
-            link: '/profile',
+            link: '/TestSite/profile',
             label: 'Профиль'
         },
         {
             name: 'Войти',
-            link: '/login',
+            link: '/TestSite/login',
             label: 'Войти',
             condition: isAuth === false,
         }
@@ -77,7 +79,7 @@ export const useNavRoutes = (isAuth) => {
             })}
             {isAuth && <Button onClick={() => {
                 dispatch(logout());
-                navigation('/');
+                navigation('/TestSite/');
             }}>Выйти</Button>}
         </div>
     )

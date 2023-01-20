@@ -12,7 +12,7 @@ export default function Header() {
         <header>
             <div className="content">
                 <div className="header__logo">
-                    <img src={Logo} alt="Logo" onClick={() => navigate('/')}/>
+                    <img src={'.'+Logo} alt="Logo" onClick={() => navigate('/TestSite')}/>
                 </div>
 
                 {navigation}
