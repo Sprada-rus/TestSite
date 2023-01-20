@@ -1,0 +1,17 @@
+[
+  {
+    "user_name": "test",
+    "user_password": "test123",
+    "user_first_name": "Иван"
+  },
+  {
+    "user_name": "user_not_found",
+    "user_password": "test456",
+    "user_first_name": "Василий"
+  },
+  {
+    "user_name": "is_admin",
+    "user_password": "test789",
+    "user_first_name": "Кирилл"
+  }
+]

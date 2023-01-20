@@ -43,6 +43,31 @@ header .content {
 .header__action > button {
   font-weight: bold;
   color: #e6f3ff;
+  transition: border-bottom-color .3s ease-in;
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+}
+
+.header__action > button:hover {
+  border-bottom-color: #e6f3ff;
+}
+
+.header__action > button.active {
+  background-color: rgba(31, 164, 191, .7);
+}
+
+.content .btn-primary {
+  font-weight: bold;
+  color: #e6f3ff;
+  transition: border-bottom-color .3s ease-in, background-color .3s ease-in;
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+}
+
+.content .btn-primary:hover {
+  border-bottom-color: #e6f3ff;
 }
 
 .content {
@@ -53,9 +78,43 @@ img {
   width: 100%;
 }
 
+.form-custom {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-custom > .MuiTextField-root .MuiInput-root input {
+  color: #e6f3ff;
+}
+
+.form-custom > .MuiTextField-root .MuiInput-root::before {
+  border-bottom: 2px solid rgba(230, 243, 255, 0.5);
+}
+
+.form-custom > .MuiTextField-root .MuiInput-root:hover::before {
+  border-bottom: 2px solid #e6f3ff;
+}
+
+.form-custom > .MuiTextField-root .MuiInput-root::after {
+  border-bottom: 2px solid rgba(164, 201, 255, 0.8);
+}
+
+.form-custom > .MuiTextField-root + .MuiTextField-root {
+  margin-top: 1em;
+}
+
+.form-custom > .MuiTextField-root label {
+  font-weight: bold;
+  color: #e6f3ff;
+}
+
+.form-custom > .MuiTextField-root .MuiFormHelperText-root {
+  color: #e6f3ff;
+}
+
 @media (min-width: 1124px) {
   .header__action {
-    flex: 0 0 20%;
+    flex: 0 0 40%;
   }
 
   .content {
